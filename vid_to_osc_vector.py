@@ -50,7 +50,7 @@ def points_from_doc(doc, density=5, scale=1, offset=0):
 #Thank God for fstrings
 def bmp_to_SVG(bmp_path, a, t_size):
     output_path = os.path.join(CWD, "output_svgs", pathlib.Path(bmp_path).stem + ".svg")  #CWD + svg_folder + filename
-    subprocess.run(f'cmd /c "{POTRACE_PATH} {bmp_path} -b svg -t {t_size} -a {a} -O {OPT_TOLERANCE} -o {output_path}"', startupinfo=startupinfo)
+    subprocess.run(f'cmd /c ""{POTRACE_PATH}" "{bmp_path}" -b svg -t {t_size} -a {a} -O {OPT_TOLERANCE} -o "{output_path}""', startupinfo=startupinfo)
     return output_path
 
 """
